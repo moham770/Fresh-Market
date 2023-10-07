@@ -1,7 +1,6 @@
-import style from  './MainSlider.module.css'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Error from "../Error/Error";
 import logo1 from '../../assets/images/slider-image-1.jpeg'
 import logo2 from '../../assets/images/slider-image-2.jpeg'
 import logo3 from '../../assets/images/slider-image-3.jpeg'
