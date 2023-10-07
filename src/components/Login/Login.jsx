@@ -32,24 +32,27 @@ export default function Login() {
 
   
   async function LoginAccount(values) {
-    try {
-      setIsLoading(true);
-      const { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, values);
-      if (data.message === "success") {
-        setUserToken(data.token);
-        localStorage.setItem("userToken", data.token);
-        setUserName(data.user.name)
-        localStorage.setItem('userName', data.user.name);
+    setIsLoading(true);
+    await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, values)
+      .then((res)=>{
+        console.log(res.data.user.token)
+        setIsLoading(false);
+        setUserToken(res.data.token);
+        localStorage.setItem("userToken",res.data.token);
+        setUserName(res.data.user.name)
+        localStorage.setItem('userName',res.data.user.name);
         setIsLoading(false);
         navigate("/");
-      } else {
-        setisError(data.message);
+      })
+      .catch((err)=>{
         setIsLoading(false);
-      }
-    } catch (error) {
-      console.error('An error occurred during login:', error);
-    }
-  }
+        setisError(err.response.data.message);
+        console.log(err.response.data.message)
+      })
+ 
+     
+    } 
+
 
   const passwordRegex = /^[A-Z]+[A-Za-z0-9!@$%^&]{8,}$/;
   let validationSchema = yup.object({
@@ -59,9 +62,6 @@ export default function Login() {
       )
       .required("Password is Required"),
   });
-
-
-
 
 
   const formik = useFormik({
@@ -76,8 +76,7 @@ export default function Login() {
     validationSchema,
   });
 
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Login</title>
       </Helmet>
@@ -86,7 +85,7 @@ export default function Login() {
         <h2>Login: </h2>
         <form onSubmit={formik.handleSubmit}>
           {isError ? (
-            <div className="alert alert-danger p-3 mt-3">{isError} </div>
+            <div className="alert alert-danger p-3 mt-3"> {isError} </div>
           ) : (
             ""
           )}
@@ -133,7 +132,7 @@ export default function Login() {
           ) : null}
           <Link to='/forgetpassword'  className="d-block resetPassword">Forget Password ?</Link>
 
-          <button type="submit" className="bg-main btn text-white mt-3">
+          <button disabled={!(formik.dirty &&formik.isValid)} type="submit" className="bg-main btn text-white mt-3">
             {isLoading ? (
               <>
                 <Puff
@@ -156,5 +155,5 @@ export default function Login() {
       </div>
 
     </>
-  );
+  
 }
