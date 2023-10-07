@@ -9,7 +9,7 @@ export default function Footer() {
   return  <>
 
     <footer >
-      <div className="bg-main-light  p-3  ">
+      <div className="bg-main-light  py-3 px-5  ">
     <h5 className='fw-bold'>Get The Fresh Cart App </h5>
     <h6>we will send you a  link, open it on your phone to download the app </h6>
     <div className="row g-3  py-1 border-bottom ">
