@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import { useQuery } from "react-query";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,7 +14,7 @@ export default function CategorySlider() {
     const { data: { data } } = await axios.get(`https://ecommerce.routemisr.com/api/v1/categories`); 
     return data;
   }
-  const { data ,isError } = useQuery('getCategorySlider', getCategorySlider);
+  const { data,isError } = useQuery('getCategorySlider', getCategorySlider);
   return (
     <>
     {data&& <Swiper

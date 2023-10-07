@@ -504,3 +504,17 @@ background-color: rgb(191, 7, 7);
 .resetPassword:hover{
   text-decoration: underline ;
 }
+
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  overflow: clip;
+  list-style: none;
+  padding: 40px 0 !important;
+  z-index: 1;
+  display: block;
+
+}

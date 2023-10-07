@@ -16,11 +16,6 @@ export default function Layout() {
   const {userToken}= useContext(userContext)
   const {getLogedUserCart}=  useContext(cartContext)
 
-
-
-
-
-
   useEffect (()=>{
      (async ()=>{
     await getLogedUserCart()
