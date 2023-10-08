@@ -11,7 +11,7 @@ import { Pagination } from 'swiper/modules';
 export default function MainSlider() {
   return  <>
 
-    <div className="row mb-5 g-0 d-flex align-items-center justify-content-center">
+    <div className="row mb-5 g-0 d-flex justify-content-center ">
     <div  className="w-75">
     <Swiper
     pagination={{ clickable: true }}

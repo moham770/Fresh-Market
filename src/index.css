@@ -584,7 +584,7 @@ font-size: 10px;
   overflow: hidden;
   overflow: clip;
   list-style: none;
-  padding: 40px 0 !important;
+  padding-bottom: 40px  !important;
   z-index: 1;
   display: block;
 
