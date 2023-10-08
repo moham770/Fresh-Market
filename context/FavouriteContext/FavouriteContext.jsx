@@ -21,9 +21,11 @@ const headers={
       const response = await axios.post(`https://ecommerce.routemisr.com/api/v1/wishlist`,{productId},{headers})
       setNumberOfFavourite(response.data.data.length)
     toast.success('Successfully added to Favorites');
+    document.getElementById('bookmark').classList.add('fa-bounce')
+    setTimeout(() => {
+        document.getElementById('bookmark').classList.remove('fa-bounce');
+      }, 1000); 
     } catch (error) {
-        console.log('error',error)      
-        console.log('falaaaaaaaaa')
         toast.error('Failed to add to Favorites');
     }
 

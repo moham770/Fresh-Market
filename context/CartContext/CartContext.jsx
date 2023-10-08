@@ -45,6 +45,10 @@ async function addProductToCart(id) {
     );
       setNumberOfCartItems(response.data.numOfCartItems);
       toast.success('Product added successfully', { duration: 1000, position: 'top-center' });
+      document.getElementById('cart').classList.add('fa-bounce')
+      setTimeout(() => {
+        document.getElementById('cart').classList.remove('fa-bounce');
+      }, 1000); 
     return response.data;
   }
   
@@ -129,7 +133,7 @@ async function clearAllItems(){
 
 
 
-
+console.log(document.getElementById('cart'))
 
 
 

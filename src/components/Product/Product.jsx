@@ -13,9 +13,6 @@
 
 
 
-
-  console.log(respoonse?.data?.data.products)
-
     const  iconFav= useRef()
     const  iconcart= useRef()
     const { imageCover, category: { name }, title, price, ratingsAverage, id } = product;
@@ -23,9 +20,9 @@
     const { addtoFavoutite } = useContext(favoutiteContext);
 
     async function addtoCart(id) {
-      const response = await addProductToCart(id);
+      await addProductToCart(id);
       iconcart.current.classList.add('bg-main','text-white')
-      console.log(response)
+
     
     }
 
