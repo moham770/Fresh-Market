@@ -153,7 +153,7 @@ export default function DetailsUser() {
               <input className="form-control mb-3" type="text" placeholder="City" id="city" value={formik.values.city} name="city" onChange={formik.handleChange} onBlur={formik.handleBlur}  />
 
 
-              <div className="row g-4">
+              <div className="row ">
           <div className="col-md-6">
           <button  type="button" onClick={()=>{paymnetOnlineHandler(formik.values)}} className="btn bg-main my-2 text-white w-100 fw-bold">Online Payment</button>
           </div>

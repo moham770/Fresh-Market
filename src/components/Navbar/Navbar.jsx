@@ -62,23 +62,18 @@ const  TColor = Math.trunc(Math.random()*256)
     <div className="collapse navbar-collapse" id="collapsibleNavId">
       <ul className="navbar-nav me-auto mt-2 mt-lg-0">
         {userToken? <>
+      
         <li className="nav-item">
-          <NavLink className="nav-link" to="/cart">Cart</NavLink>
+          <NavLink className="nav-link fw-bolder" to="/products">Products</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/products">Products</NavLink>
+          <NavLink className="nav-link fw-bolder" to="/categories">Categories</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/categories">Categories</NavLink>
+          <NavLink className="nav-link fw-bolder" to="/brands">Brands</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/brands">Brands</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/favourite">Favoutite ({NumberOfFavourite}) <i className='fas fa-heart text-danger'></i></NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/allorders">All Orders </NavLink>
+          <NavLink className="nav-link fw-bolder" to="/allorders">All Orders </NavLink>
         </li>
         
         </>:""}
@@ -89,13 +84,22 @@ const  TColor = Math.trunc(Math.random()*256)
 
 
   {userToken?<>
-  <Link to='/cart' className="nav-item position-relative mx-3">
-          <i className="fa-solid fa-cart-shopping fs-3" ></i>
+            <div className="d-flex   ">
+
+       
+          <NavLink className="nav-item position-relative mx-2 p-1    fw-bolder fs-6" to="/favourite">WishLish
+          <i class="fa-solid fa-bookmark fs-4 ms-1"></i>
+          <span className='cartIconNumber position-absolute  text-white'> {NumberOfFavourite}</span>
+           </NavLink>
+  
+
+  <NavLink to='/cart' className="nav-item position-relative mx-2 p-1   fw-bolder fs-6">Cart
+          <i className="fa-solid fa-cart-shopping fs-4 ms-1" ></i>
          <span className={`cartIconNumber position-absolute  text-white`}>{numberOfCartItems}</span>
-        </Link>
+        </NavLink>
+        </div>
 
-
-
+      
 
 
 
@@ -108,8 +112,8 @@ const  TColor = Math.trunc(Math.random()*256)
     <li className="dropdown-item rounded-circle my-2 mx-auto fw-bolder d-flex align-items-center justify-content-center"style={{width:'40px',height:'40px',backgroundColor:`rgb(${FColor} ,${SColor},${TColor},0.4)`}} >{userName?.slice(0,1).toLocaleUpperCase()}  </li>
     <li><button className="dropdown-item  text-center" type="button">{userName}</button></li>
     <hr />
-       <li className="nav-item  bg-primary text-center">
-      <NavLink onClick={()=>{logOut()}} className="nav-link  text-white" to='/login'>Logout</NavLink>
+       <li className="nav-item logout text-center">
+      <NavLink onClick={()=>{logOut()}} className="nav-link " to='/login'>Logout <i className="fa-solid fa-right-from-bracket"></i></NavLink>
    </li> 
     
   </ul>

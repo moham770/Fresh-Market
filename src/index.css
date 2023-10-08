@@ -29,6 +29,7 @@ a , a:hover{
     color: black;
     text-decoration: none;
 }
+
 .product:hover
 {
     box-shadow: var(--shadow);
@@ -36,19 +37,77 @@ a , a:hover{
     box-shadow: 1px 10px 10px #bdbcbc !important;
 }
 
-
-.product .btn 
-{
-    transition: transform 1s , opacity 1s;
-    transform: translateY(100%);
-    opacity: 0;
+.product .heart{
+  position: absolute;
+  top: 3%;
+  right: 10px;
+  background-color :#a3a0a0;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
-.product:hover .btn 
-{
-    opacity: 1;
-    transform: translateY(0%);
+
+.product{
+  position: relative;
+}
+
+.product .cart{
+  position: absolute;
+  width: 90%;
+  margin: auto;
+  bottom: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+  flex-direction:row-reverse ;
+
 
 }
+.product .cart .cart-text{
+  background-color: var(--main-color);
+  color: #fff;
+  width: 100%;
+  font-weight: 700;
+  text-align: center;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  border-radius: 10px;
+  padding: 3px 0;
+
+}
+
+
+.product .cart .fa-cart-shopping{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  background-color: #a3a0a0;
+  z-index: 5;
+color: #fff;
+}
+
+.product .cart .fa-cart-shopping:hover + .cart-text{
+  transform: translateX(0%);
+}
+
+@media screen and (max-width:575.9px) {
+  .product .cart{
+    bottom: 20%;
+  }
+  
+}
+
+
+
 .font-sm
 {
     font-size: 14px;
@@ -367,15 +426,17 @@ a , a:hover{
 
 
 .cartIconNumber{
-  top: -40%;
-  left: 70%;
+  top: -20%;
+  left: 90%;
   border-radius: 30px;
-width: 23px;
-height: 23px;
+width: 20px;
+height: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: rgb(191, 7, 7);
+background-color: var(--main-color);
+font-size: 10px;
+
 }
 
 .navbar-nav .dropdown-menu {
@@ -489,9 +550,10 @@ background-color: rgb(191, 7, 7);
 
 }
 .active{
-  background-color: var(--main-color) !important;
-  color: #fff !important;
-  border-radius: 10px;
+  /* background-color: var(--main-color) !important; */
+  color: var(--main-color) !important;
+  font-weight: 900 !important;
+
 }
 .nav-link{
   border-radius: 10px;
@@ -528,3 +590,25 @@ background-color: rgb(191, 7, 7);
   background-image: url('./assets/images/error.svg');
 background-position: center center;
 }
+
+.logout{
+  transition: 0.5s;
+  background-color:red ;
+  border-radius: 10px;
+}
+.logout>.nav-link{
+  color: #fff !important;
+ 
+}
+
+.logout:hover{
+background-color: transparent;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+.logout:hover >.nav-link{
+color: red !important;
+
+}
+
+

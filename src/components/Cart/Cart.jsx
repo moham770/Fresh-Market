@@ -35,7 +35,7 @@ export default function Cart() {
             {data && data.products.length > 0 ? (
               <div className="p-4 my-5 bg-main-light">
                 <h2 className="fw-bold">Shop Cart: </h2>
-                <div className="d-flex align-items-center justify-content-between my-3">
+                <div className=" my-3">
                   <h4 className="h5 fw-bold">Total Cart Price: <span className="text-main h5 fw-bolder">{data.totalCartPrice} EGP</span></h4>
                   <h6 className="h5 fw-bold">Total cart items: <span className="text-main h5 fw-bolder">{data.products.length}</span></h6>
                 </div>
@@ -52,20 +52,22 @@ export default function Cart() {
                           <button onClick={() =>  removeSpacificItemInCart(item.product.id)} className="btn"><i className="fas fa-trash-can text-danger"></i> Remove</button>
                         </div>
                         <div className="d-flex align-items-center">
-                          <button disabled={isRefetching}  onClick={() => updateCount(item.product.id, item.count + 1)} className="btn btn-outline-success py-1 px-2 mx-1"> +</button>
+                          <button disabled={isRefetching}  onClick={() => updateCount(item.product.id, item.count + 1)} style={{width:'27px',height:'27px',backgroundColor:'var(--main-color)'}} className="d-flex border-0 justify-content-center align-items-center btn btn-success rounded-circle  mx-1"> +</button>
                           <span className="mx-1">{item.count}</span>
-                          <button onClick={() => updateCount(item.product.id, item.count - 1)} className="btn btn-outline-success py-1 px-2 mx-1">-</button>
+                          <button disabled={isRefetching} onClick={() => updateCount(item.product.id, item.count - 1)} style={{width:'27px',height:'27px',backgroundColor:'#e00'}} className="d-flex border-0  justify-content-center align-items-center btn btn-success rounded-circle  mx-1">-</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
-                <div className="row g-4">
+                <div className="row g-1">
                   <div className="col">
-                    <Link to="/detailsUser" className="btn bg-main my-2 text-white w-100 fw-bold">Buy Now</Link>
+                    <Link to="/detailsUser" className="btn text-bg-primary  text-white w-100 fw-bold">CHECK OUT</Link>
+                  </div>
+                  <div className="col">
+                <button onClick={clearAllItems} className="btn  w-100 text-white"  style={{backgroundColor:'#e00'}}>CLEAR CART</button>
                   </div>
                 </div>
-                <button onClick={clearAllItems} className="btn btn-danger w-100">Clear All Items</button>
               </div>
             ) : (
               <div className="p-4 my-5 bg-main-light">

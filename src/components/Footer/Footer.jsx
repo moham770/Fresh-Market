@@ -25,16 +25,33 @@ export default function Footer() {
       </div>
       <div className="row  g-md-2 border-bottom  ">
         <div className="col-md-6 d-flex align-items-center">
+          <div className="row  g-2 mt-1 w-100 align-items-center">
+            <div className="col-lg-4">
         <p className='m-0 fw-bold'>Payment Partner</p>
-            <img  className='mx-2' style={{width:'60px ',objectFit:"cover",objectPosition:"center"}} src={Amazon_Pay} alt="Amazon_Pay" />          
-            <img  className='mx-2' style={{width:'60px ',objectFit:"cover",objectPosition:"center"}} src={American} alt="American" />  
-            <img className='mx-2' style={{width:'60px ',objectFit:"cover",objectPosition:"center"}}  src={MasterCard} alt="MasterCard" />          
-            <img  className='mx-2' style={{width:'60px ',objectFit:"cover",objectPosition:"center"}} src={paypal} alt="paypal" />  
+
+            </div>
+            <div className="col-lg-8">
+                <img  className='mx-2' style={{width:'50px ',objectFit:"cover",objectPosition:"center"}} src={Amazon_Pay} alt="Amazon_Pay" />          
+            <img  className='mx-2' style={{width:'50px ',objectFit:"cover",objectPosition:"center"}} src={American} alt="American" />  
+            <img className='mx-2' style={{width:'50px ',objectFit:"cover",objectPosition:"center"}}  src={MasterCard} alt="MasterCard" />          
+            <img  className='mx-2' style={{width:'50px ',objectFit:"cover",objectPosition:"center"}} src={paypal} alt="paypal" />  
+            </div>
+          </div>
+          
         </div>
         <div className="col-md-6 d-flex justify-content-end  align-items-center">
+          <div className="row  w-100 g-1 align-items-center">
+            <div className="col-lg-4">
+
           <p className='m-0 fw-bold'>Get Delevires With Fresh Cart</p>
-            <img  className='mx-2' src={googlePlay} style={{width:'100px',objectFit:"cover",objectPosition:"center"}} alt="" />  
-            <img className='mx-2'  src={appStore} style={{width:'100px',objectFit:"cover",objectPosition:"center"}} alt="" />            
+            </div>
+            <div className="col-lg-8">
+                      <img  className='mx-2' src={googlePlay} style={{width:'100px',objectFit:"cover",objectPosition:"center"}} alt="" />  
+            <img className='mx-2'  src={appStore} style={{width:'100px',objectFit:"cover",objectPosition:"center"}} alt="" /> 
+            </div>
+
+          </div>
+               
         </div>
       </div>
     

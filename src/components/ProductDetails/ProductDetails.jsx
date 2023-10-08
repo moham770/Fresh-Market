@@ -1,20 +1,17 @@
-import { useLoaderData, useParams } from 'react-router-dom'
-import './ProductDetails.module.css'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import Loading from '../Loading/Loading'
 import Error from '../Error/Error'
-
 import { useContext } from 'react'
 import { cartContext } from '../../../context/CartContext/CartContext'
-import toast from 'react-hot-toast'
 import Slider from 'react-slick'
 
 
 
 export default function ProductDetails() {
   const {id} =useParams()
-  const {setnumberOfCartItems}= useContext(cartContext)
+ 
 
   async function getProductDetails(){
     const {data} = await axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`)
@@ -29,7 +26,9 @@ export default function ProductDetails() {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+
+      
     };
 
     const {addProductToCart} = useContext(cartContext)
@@ -42,7 +41,7 @@ export default function ProductDetails() {
   {isLoading ? <Loading /> :isError ? <Error/> : <>
 <div className="container my-5">
   <div className="row py-4 g-4 align-items-center">
-    <div className="col-md-3  rounded-5 overflow-hidden">
+    <div className="col-md-3  rounded-5">
     <Slider {...settings}>
       {data?.data.images.map((img ,index)=> <img key={index} src={img} className='w-100 rounded-5' alt={data?.data.title} />)}
     </Slider>
