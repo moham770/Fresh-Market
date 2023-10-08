@@ -2,7 +2,7 @@ import axios from "axios"
 import { useQuery } from "react-query"
 import { useParams } from "react-router-dom"
 import Loading from "../Loading/Loading"
-
+import Error from '../Error/Error'
 
 
 export default function getSpecificBrands() {
@@ -15,7 +15,8 @@ async function getSpecificBrands(){
 }
 const {data , isError, isLoading}=useQuery('SpecificBrands',getSpecificBrands)
   return  <>
-{isLoading ? <Loading/> :data? <div className="row g-4 py-5 align-items-center text-center">
+{isLoading ? <Loading/> :data? <div className="container-fluid">
+<div className="row g-2  py-5 align-items-center text-center">
   <div className="col-md-6">
    <img  src={data.image} alt={data.name} />
   </div>
@@ -23,8 +24,9 @@ const {data , isError, isLoading}=useQuery('SpecificBrands',getSpecificBrands)
     <h2 className="fw-bold ">Brands Name</h2>
     <h2 className="fs-1 fw-bolder text-main">{data.name}</h2>
   </div>
+</div>
 </div>:"" }
-
+{isError ? <Error/>:''}
 
     </>
 

@@ -445,7 +445,10 @@ justify-content: center;
 align-items: center;
 background-color: var(--main-color);
 font-size: 10px;
+}
 
+.bg-red{
+  background-color: #f00;
 }
 
 .navbar-nav .dropdown-menu {

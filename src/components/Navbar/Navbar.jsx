@@ -88,14 +88,14 @@ const  TColor = Math.trunc(Math.random()*256)
 
        
           <NavLink className="nav-item position-relative mx-2 p-1    fw-bolder fs-6" to="/favourite">WishLish
-          <i  id='bookmark' class="fa-solid fa-bookmark fs-4 ms-1"></i>
+          <i  id='bookmark' className="fa-solid fa-bookmark fs-4 ms-1"></i>
           <span className='cartIconNumber position-absolute  text-white'> {NumberOfFavourite}</span>
            </NavLink>
   
 
   <NavLink to='/cart' className="nav-item position-relative mx-2 p-1   fw-bolder fs-6">Cart
           <i id='cart' className="fa-solid fa-cart-shopping fs-4 ms-1 " ></i>
-         <span className={`cartIconNumber position-absolute  text-white`}>{numberOfCartItems}</span>
+         <span id='itemsInCard' className={`cartIconNumber position-absolute  text-white`}>{numberOfCartItems}</span>
         </NavLink>
         </div>
 

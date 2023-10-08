@@ -19,6 +19,7 @@ export default function Layout() {
   useEffect (()=>{
      (async ()=>{
     await getLogedUserCart()
+
     })()
 
     },[userToken])

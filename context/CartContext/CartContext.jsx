@@ -75,6 +75,7 @@ async function getLogedUserCart(){
         }
         return response.data
       } catch (error) {
+        console.log(error)
         
       } 
     }
@@ -133,7 +134,7 @@ async function clearAllItems(){
 
 
 
-console.log(document.getElementById('cart'))
+
 
 
 
