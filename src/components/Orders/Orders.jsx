@@ -36,9 +36,9 @@ const {data,isLoading,isError} =useQuery('getAllOrders',getAllOrders)
 
       
       {data  ? <div className="container my-5">
-        {data &&data?.map((element,index)=>{
+        {data &&data?.reverse().map((element,index)=>{
          return <div key={element._id} className="row g-2 my-3 bg-main-light border border-3 border-success rounded-2">
-         <p className='text-center mb-3 h5' >Order Number : <span className='text-main fw-bold'>{index+1}</span> </p>
+         <p className='text-center mb-3 h5' >Order Number : <span className='text-main fw-bold'>{data?.length -index}</span> </p>
          <hr  className='mb-3'/>
         <div className=" col-sm-5">
           <p className="mb-3">Phone: <span className='text-main fw-bold'>{data&& element?.shippingAddress.phone}</span>  </p>

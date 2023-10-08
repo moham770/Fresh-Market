@@ -31,12 +31,12 @@
 
     async function addToWishList(id) {
         await addtoFavoutite(id)
-        iconFav.current.classList.add('text-danger')
+        iconFav.current.classList.add('text-red')
     }
 
 
     const isFavorite = data && data.data.some((fav) => fav.id === id);
-    const heartIconClass = isFavorite ? ' text-danger' : null;
+    const heartIconClass = isFavorite ? ' text-red' : null;
 
 
 

@@ -49,8 +49,14 @@ a , a:hover{
   justify-content: center;
   align-items: center;
   font-size: 18px;
+  transition: 0.3s;
 }
-
+.product .heart:hover{
+  color: #f00;
+}
+.text-red{
+  color: #f00;
+}
 .product{
   position: relative;
 }
@@ -93,8 +99,11 @@ a , a:hover{
   background-color: #a3a0a0;
   z-index: 5;
 color: #fff;
+transition: 0.3s;
 }
-
+.product .cart .fa-cart-shopping:hover{
+  background-color: var(--main-color);
+}
 .product .cart .fa-cart-shopping:hover + .cart-text{
   transform: translateX(0%);
 }
